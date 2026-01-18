@@ -1,0 +1,603 @@
+:root {
+    --primary: #7c3aed;
+    --primary-dark: #5b21b6;
+    --secondary: #10b981;
+    --dark: #1f2937;
+    --light: #f9fafb;
+    --gray: #6b7280;
+    --danger: #ef4444;
+    --success: #10b981;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: white;
+    min-height: 100vh;
+}
+
+/* Навигация */
+.navbar {
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1rem 2rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+}
+
+.logo i {
+    color: var(--primary);
+}
+
+.logo-sub {
+    font-size: 0.9rem;
+    color: var(--gray);
+    margin-left: 0.5rem;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: var(--gray);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color 0.3s;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: white;
+}
+
+.nav-link i {
+    font-size: 0.9rem;
+}
+
+/* Кнопки */
+.btn {
+    padding: 0.5rem 1.5rem;
+    border-radius: 8px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 0.9rem;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+}
+
+.btn-outline {
+    background: transparent;
+    color: white;
+    border: 1px solid var(--gray);
+}
+
+.btn-outline:hover {
+    border-color: white;
+}
+
+.btn-large {
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+}
+
+/* Герой секция */
+.hero {
+    max-width: 1200px;
+    margin: 8rem auto 4rem;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    background: linear-gradient(90deg, #7c3aed, #8b5cf6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    color: var(--gray);
+    margin-bottom: 1.5rem;
+}
+
+.purple {
+    color: var(--primary);
+}
+
+.hero-desc {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #cbd5e1;
+    margin-bottom: 2rem;
+}
+
+.hero-features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+}
+
+.feature i {
+    color: var(--primary);
+}
+
+/* Загрузка файлов */
+.upload-section {
+    max-width: 800px;
+    margin: 4rem auto;
+    padding: 2rem;
+}
+
+.upload-zone {
+    border: 3px dashed var(--primary);
+    border-radius: 20px;
+    padding: 4rem 2rem;
+    text-align: center;
+    margin: 2rem 0;
+    cursor: pointer;
+    transition: all 0.3s;
+    background: rgba(124, 58, 237, 0.05);
+}
+
+.upload-zone:hover {
+    background: rgba(124, 58, 237, 0.1);
+}
+
+.upload-zone i {
+    font-size: 4rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.encryption-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background: rgba(16, 185, 129, 0.1);
+    border-radius: 20px;
+    color: var(--success);
+}
+
+/* Альбомы */
+.albums-section {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 2rem;
+}
+
+.albums-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.album-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.album-card:hover {
+    transform: translateY(-5px);
+}
+
+.album-cover {
+    height: 180px;
+    background: linear-gradient(45deg, #7c3aed, #10b981);
+    position: relative;
+    overflow: hidden;
+}
+
+.album-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.album-info {
+    padding: 1rem;
+}
+
+.album-title {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.album-meta {
+    font-size: 0.9rem;
+    color: var(--gray);
+}
+
+/* Memory Garden */
+.garden-section {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 2rem;
+}
+
+.garden-visual {
+    position: relative;
+    height: 400px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    margin-top: 2rem;
+    overflow: hidden;
+}
+
+#gardenCanvas {
+    width: 100%;
+    height: 100%;
+}
+
+.garden-stats {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    gap: 2rem;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 1.5rem;
+    border-radius: 12px;
+}
+
+.stat-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: var(--gray);
+}
+
+/* Модальные окна */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+    background: var(--dark);
+    margin: 10% auto;
+    padding: 2rem;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 400px;
+    position: relative;
+}
+
+.modal-content input {
+    width: 100%;
+    padding: 0.8rem;
+    margin: 0.5rem 0 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--gray);
+    border-radius: 8px;
+    color: white;
+}
+
+.close {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .nav-menu {
+        display: none;
+    }
+    
+    .hero-features {
+        grid-template-columns: 1fr;
+    }
+    
+    .garden-stats {
+        position: relative;
+        bottom: auto;
+        right: auto;
+        justify-content: center;
+    }
+}
+/* Стили для Чатов */
+.chats-section {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 2rem;
+}
+
+.chats-container {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    overflow: hidden;
+    height: 600px;
+    margin-top: 2rem;
+}
+
+.chats-sidebar {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 1rem;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.chats-search input {
+    width: 100%;
+    padding: 0.8rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--gray);
+    border-radius: 8px;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.chats-list {
+    overflow-y: auto;
+    height: calc(100% - 60px);
+}
+
+.chat-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background 0.3s;
+}
+
+.chat-item:hover {
+    background: rgba(124, 58, 237, 0.1);
+}
+
+.chat-item.active {
+    background: rgba(124, 58, 237, 0.2);
+}
+
+.chat-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+    font-size: 1.5rem;
+}
+
+.chat-info {
+    flex: 1;
+}
+
+.chat-name {
+    font-weight: 600;
+}
+
+.chat-last {
+    font-size: 0.8rem;
+    color: var(--gray);
+}
+
+.chat-status {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--success);
+}
+
+.chat-status.offline {
+    background: var(--gray);
+}
+
+.chat-window {
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-header {
+    padding: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-user {
+    display: flex;
+    align-items: center;
+}
+
+.chat-status-text {
+    font-size: 0.8rem;
+    color: var(--success);
+}
+
+.chat-messages {
+    flex: 1;
+    padding: 1rem;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.message {
+    max-width: 70%;
+    padding: 0.8rem 1rem;
+    border-radius: 12px;
+    position: relative;
+}
+
+.message.received {
+    background: rgba(124, 58, 237, 0.1);
+    align-self: flex-start;
+}
+
+.message.sent {
+    background: rgba(16, 185, 129, 0.1);
+    align-self: flex-end;
+}
+
+.message-time {
+    font-size: 0.7rem;
+    color: var(--gray);
+    text-align: right;
+    margin-top: 0.3rem;
+}
+
+.chat-input {
+    display: flex;
+    gap: 0.5rem;
+    padding: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 0.8rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--gray);
+    border-radius: 8px;
+    color: white;
+}
+
+/* Стили для MOC.AI секции */
+.ai-section {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 2rem;
+}
+
+.ai-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.ai-feature-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.ai-feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.ai-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(45deg, var(--primary), var(--secondary));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin: 0 auto 1rem;
+}
+
+.ai-feature-card h3 {
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.ai-feature-card p {
+    color: var(--gray);
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+
+.ai-suggestions {
+    background: rgba(124, 58, 237, 0.05);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-top: 2rem;
+}
+
+/* Анимация загрузки */
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+.loading {
+    animation: pulse 1.5s infinite;
+}

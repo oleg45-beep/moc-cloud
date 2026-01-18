@@ -4,340 +4,271 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MOC — My Open Cloud 💜</title>
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            color: white;
-            min-height: 100vh;
-            padding: 20px;
-        }
-        
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        
-        header {
-            text-align: center;
-            padding: 40px 0;
-        }
-        
-        .logo {
-            font-size: 4rem;
-            margin-bottom: 20px;
-            color: #7c3aed;
-        }
-        
-        h1 {
-            font-size: 3.5rem;
-            margin-bottom: 10px;
-            background: linear-gradient(90deg, #7c3aed, #8b5cf6);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
-        .subtitle {
-            font-size: 1.5rem;
-            color: #94a3b8;
-            margin-bottom: 30px;
-        }
-        
-        .main-card {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 20px;
-            padding: 40px;
-            margin: 30px 0;
-            border: 1px solid rgba(124, 58, 237, 0.3);
-        }
-        
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin: 40px 0;
-        }
-        
-        .feature-card {
-            background: rgba(124, 58, 237, 0.1);
-            padding: 25px;
-            border-radius: 15px;
-            text-align: center;
-            transition: transform 0.3s;
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .feature-icon {
-            font-size: 2.5rem;
-            color: #7c3aed;
-            margin-bottom: 15px;
-        }
-        
-        .assistant-section {
-            background: rgba(16, 185, 129, 0.1);
-            border-radius: 15px;
-            padding: 30px;
-            margin: 40px 0;
-            border-left: 5px solid #10b981;
-        }
-        
-        .assistant-header {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            margin-bottom: 20px;
-        }
-        
-        .assistant-avatar {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, #7c3aed, #8b5cf6);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 40px;
-        }
-        
-        .btn {
-            display: inline-block;
-            background: #7c3aed;
-            color: white;
-            padding: 15px 30px;
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: bold;
-            margin: 10px;
-            border: none;
-            cursor: pointer;
-            font-size: 1.1rem;
-            transition: background 0.3s;
-        }
-        
-        .btn:hover {
-            background: #5b21b6;
-        }
-        
-        .btn-outline {
-            background: transparent;
-            border: 2px solid #7c3aed;
-        }
-        
-        .demo-alert {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: #1e293b;
-            border: 2px solid #7c3aed;
-            border-radius: 10px;
-            padding: 15px;
-            max-width: 300px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-            animation: slideIn 0.5s ease;
-        }
-        
-        @keyframes slideIn {
-            from { transform: translateX(100%); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
-        }
-        
-        footer {
-            text-align: center;
-            margin-top: 50px;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: #64748b;
-        }
-        
-        @media (max-width: 768px) {
-            h1 { font-size: 2.5rem; }
-            .subtitle { font-size: 1.2rem; }
-            .features { grid-template-columns: 1fr; }
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💜</text></svg>">
 </head>
 <body>
-    <div class="container">
-        <header>
+    <!-- Навигация -->
+    <nav class="navbar">
+        <div class="nav-container">
             <div class="logo">
                 <i class="fas fa-cloud"></i>
+                <span>MOC</span>
+                <span class="logo-sub">My Open Cloud</span>
             </div>
-            <h1>MOC — My Open Cloud</h1>
-            <p class="subtitle">Безопасное. Умное. Твоё. <span style="color: #7c3aed;">💜</span></p>
-        </header>
-        
-        <div class="main-card">
-            <h2 style="text-align: center; margin-bottom: 30px;">Демо-версия проекта MOC</h2>
-            
-            <p style="font-size: 1.2rem; line-height: 1.6; margin-bottom: 30px; text-align: center;">
-                Это демонстрация интерфейса безопасного облака с AI-ассистентом.<br>
-                Полная версия работает локально с шифрованием, чатами и AI-обработкой фото.
-            </p>
-            
-            <div style="text-align: center; margin: 30px 0;">
-                <a href="#demo" class="btn">
-                    <i class="fas fa-play"></i> Запустить демо
-                </a>
-                <a href="https://github.com/oleg45-beep/moc-cloud" class="btn btn-outline" target="_blank">
-                    <i class="fab fa-github"></i> Исходный код
-                </a>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link active"><i class="fas fa-home"></i> Главная</a>
+                <a href="#albums" class="nav-link"><i class="fas fa-images"></i> Альбомы</a>
+                <a href="#garden" class="nav-link"><i class="fas fa-seedling"></i> Memory Garden</a>
+                <a href="#chats" class="nav-link"><i class="fas fa-comments"></i> Чаты</a>
+                <a href="#ai" class="nav-link"><i class="fas fa-robot"></i> MOC.AI</a>
+            </div>
+            <div class="user-menu">
+                <button id="loginBtn" class="btn btn-outline"><i class="fas fa-sign-in-alt"></i> Войти</button>
+                <button id="registerBtn" class="btn btn-primary"><i class="fas fa-user-plus"></i> Регистрация</button>
             </div>
         </div>
-        
-        <div class="features">
-            <div class="feature-card">
-                <div class="feature-icon">
+    </nav>
+
+    <!-- Главный экран -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">MOC — My Open Cloud</h1>
+            <p class="hero-subtitle">Безопасное. Умное. Твоё. <span class="purple">💜</span></p>
+            <p class="hero-desc">
+                Облако, которое не просто хранит — оно понимает.<br>
+                Твоя память. Твои ключи. Твои друзья.
+            </p>
+            <div class="hero-features">
+                <div class="feature">
                     <i class="fas fa-lock"></i>
+                    <span>Полное шифрование</span>
                 </div>
-                <h3>Полное шифрование</h3>
-                <p>Фото шифруются на вашем устройстве перед загрузкой</p>
-            </div>
-            
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <i class="fas fa-robot"></i>
+                <div class="feature">
+                    <i class="fas fa-brain"></i>
+                    <span>AI-ассистент</span>
                 </div>
-                <h3>AI-ассистент</h3>
-                <p>Умная сортировка и создание альбомов</p>
-            </div>
-            
-            <div class="feature-card">
-                <div class="feature-icon">
+                <div class="feature">
                     <i class="fas fa-users"></i>
+                    <span>Безопасные чаты</span>
                 </div>
-                <h3>Безопасные чаты</h3>
-                <p>Общайтесь с друзьями без слежки</p>
-            </div>
-        </div>
-        
-        <div class="assistant-section" id="demo">
-            <div class="assistant-header">
-                <div class="assistant-avatar">
-                    🤖
-                </div>
-                <div>
-                    <h2>Ваш ассистент: <span style="color: #7c3aed;">Олег</span></h2>
-                    <p style="color: #94a3b8; margin-top: 5px;">
-                        <i class="fas fa-shield-alt"></i> Крипто-помощник | <span style="color: #10b981;">🟢 Онлайн</span>
-                    </p>
+                <div class="feature">
+                    <i class="fas fa-gamepad"></i>
+                    <span>Геймификация</span>
                 </div>
             </div>
-            
-            <div style="background: rgba(255, 255, 255, 0.05); padding: 20px; border-radius: 10px; margin: 20px 0;">
-                <p style="font-style: italic; font-size: 1.1rem; line-height: 1.6;">
-                    "Привет! Я Олег, ваш персональный помощник в MOC.<br>
-                    Я шифрую ваши фото с помощью мастер-ключа, который есть только у вас.<br>
-                    Даже я не могу посмотреть ваши файлы — это настоящая приватность!"
-                </p>
-            </div>
-            
-            <div style="display: flex; gap: 15px; margin-top: 20px; flex-wrap: wrap;">
-                <button class="btn btn-outline" onclick="showMessage('ai')">
-                    <i class="fas fa-brain"></i> AI-анализ фото
-                </button>
-                <button class="btn btn-outline" onclick="showMessage('encrypt')">
-                    <i class="fas fa-key"></i> Показать шифрование
-                </button>
-                <button class="btn btn-outline" onclick="showMessage('chat')">
-                    <i class="fas fa-comment"></i> Тест чата
-                </button>
+            <button id="getStarted" class="btn btn-primary btn-large">
+                <i class="fas fa-rocket"></i> Начать использовать
+            </button>
+        </div>
+        <div class="hero-visual">
+            <div class="cloud-visual">
+                <div class="cloud-part" style="--delay: 0s"></div>
+                <div class="cloud-part" style="--delay: 0.5s"></div>
+                <div class="cloud-part" style="--delay: 1s"></div>
             </div>
         </div>
-        
-        <div style="text-align: center; margin: 50px 0;">
-            <h3>Хотите запустить полную версию?</h3>
-            <p style="color: #94a3b8; margin: 20px 0;">
-                Скачайте проект и запустите локально на Python
-            </p>
-            <div style="background: rgba(0,0,0,0.3); padding: 20px; border-radius: 10px; display: inline-block; margin: 20px 0;">
-                <code style="color: #7c3aed; font-size: 1.1rem;">
-                    git clone https://github.com/oleg45-beep/moc-cloud.git<br>
-                    cd moc-cloud/backend<br>
-                    python app.py
-                </code>
+    </section>
+
+    <!-- Панель загрузки -->
+    <section class="upload-section">
+        <div class="container">
+            <h2><i class="fas fa-upload"></i> Загрузите ваши воспоминания</h2>
+            <div class="upload-zone" id="uploadZone">
+                <i class="fas fa-cloud-upload-alt"></i>
+                <p>Перетащите файлы сюда или кликните для выбора</p>
+                <input type="file" id="fileInput" multiple accept="image/*,.jpg,.jpeg,.png,.gif" style="display: none;">
+                <div class="encryption-status">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Все файлы шифруются на вашем устройстве</span>
+                </div>
+            </div>
+            <div id="uploadProgress" class="progress-container"></div>
+        </div>
+    </section>
+
+    <!-- Альбомы -->
+    <section id="albums" class="albums-section">
+        <div class="container">
+            <h2><i class="fas fa-images"></i> Ваши альбомы</h2>
+            <div class="albums-grid" id="albumsGrid">
+                <!-- Альбомы будут загружены через JS -->
             </div>
         </div>
-        
-        <footer>
-            <p style="margin-bottom: 10px;">
-                <i class="fas fa-heart" style="color: #7c3aed;"></i> 
-                MOC — My Open Cloud | Безопасное облако нового поколения
+    </section>
+
+    <!-- Memory Garden -->
+    <section id="garden" class="garden-section">
+        <div class="container">
+            <h2><i class="fas fa-seedling"></i> Memory Garden</h2>
+            <div class="garden-visual">
+                <canvas id="gardenCanvas"></canvas>
+                <div class="garden-stats">
+                    <div class="stat">
+                        <div class="stat-value" id="memoryCount">0</div>
+                        <div class="stat-label">Воспоминаний</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value" id="friendCount">0</div>
+                        <div class="stat-label">Друзей</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value" id="achievementCount">0</div>
+                        <div class="stat-label">Достижений</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Чаты -->
+    <section id="chats" class="chats-section">
+        <div class="container">
+            <h2><i class="fas fa-comments"></i> Чаты</h2>
+            <p class="section-subtitle">Общайтесь безопасно с друзьями</p>
+            <div class="chats-container" id="chatsContainer">
+                <div class="chat-placeholder">
+                    <i class="fas fa-comments"></i>
+                    <h3>Ваши чаты</h3>
+                    <p>Здесь будут ваши беседы с друзьями</p>
+                    <button class="btn btn-outline" onclick="mocApp.startNewChat()">
+                        <i class="fas fa-plus"></i> Начать новый чат
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MOC.AI -->
+    <section id="ai" class="ai-section">
+        <div class="container">
+            <h2><i class="fas fa-robot"></i> MOC.AI</h2>
+            <p class="section-subtitle">Ваш умный помощник</p>
+            <div class="ai-features">
+                <div class="ai-card">
+                    <div class="ai-icon"><i class="fas fa-camera-retro"></i></div>
+                    <h3>Авто-альбомы</h3>
+                    <p>AI создаёт тематические альбомы из ваших фото</p>
+                </div>
+                <div class="ai-card">
+                    <div class="ai-icon"><i class="fas fa-user-friends"></i></div>
+                    <h3>Распознавание друзей</h3>
+                    <p>Находит общие фото и предлагает поделиться</p>
+                </div>
+                <div class="ai-card">
+                    <div class="ai-icon"><i class="fas fa-magic"></i></div>
+                    <h3>Умные советы</h3>
+                    <p>Подсказывает, кому отправить фото</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Модальные окна -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('loginModal')">&times;</span>
+            <h2><i class="fas fa-sign-in-alt"></i> Вход в MOC</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginUsername">Имя пользователя:</label>
+                    <input type="text" id="loginUsername" placeholder="Ваш логин" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Пароль:</label>
+                    <input type="password" id="loginPassword" placeholder="Ваш пароль" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">
+                    <i class="fas fa-sign-in-alt"></i> Войти
+                </button>
+            </form>
+            <p class="modal-note">
+                <i class="fas fa-info-circle"></i>
+                Ваш мастер-ключ никогда не покидает ваше устройство
             </p>
-            <p style="font-size: 0.9rem;">
-                Демо-сайт на GitHub Pages | Полная версия: Flask + JavaScript + SQLite
-            </p>
-            <p style="margin-top: 20px; color: #475569;">
-                💜 Создано с заботой о вашей приватности
-            </p>
-        </footer>
+        </div>
     </div>
-    
-    <div id="demoAlert" class="demo-alert" style="display: none;">
-        <!-- Сообщения будут здесь -->
+
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('registerModal')">&times;</span>
+            <h2><i class="fas fa-user-plus"></i> Регистрация в MOC</h2>
+            <form id="registerForm">
+                <div class="form-group">
+                    <label for="regUsername">Имя пользователя:</label>
+                    <input type="text" id="regUsername" placeholder="Придумайте логин" required>
+                </div>
+                <div class="form-group">
+                    <label for="regPassword">Пароль:</label>
+                    <input type="password" id="regPassword" placeholder="Минимум 6 символов" required>
+                </div>
+                <div class="form-group">
+                    <label for="regEmail">Email (необязательно):</label>
+                    <input type="email" id="regEmail" placeholder="example@mail.com">
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">
+                    <i class="fas fa-check"></i> Зарегистрироваться
+                </button>
+            </form>
+            <p class="modal-note">
+                <i class="fas fa-shield-alt"></i>
+                Будет сгенерирован мастер-ключ. Сохраните его!
+            </p>
+        </div>
     </div>
-    
+
+    <!-- Тестовая кнопка (можно удалить потом) -->
+    <button id="testBtn" style="position: fixed; bottom: 20px; right: 20px; background: #7c3aed; color: white; border: none; padding: 10px 15px; border-radius: 50%; cursor: pointer; z-index: 1000;">
+        <i class="fas fa-bug"></i>
+    </button>
+
+    <!-- Скрипты -->
+    <script src="js/main.js"></script>
     <script>
-        function showMessage(type) {
-            const alertBox = document.getElementById('demoAlert');
-            let message = '';
+        // Глобальные функции
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+        
+        // Тестовая функция
+        document.getElementById('testBtn').addEventListener('click', async () => {
+            const username = prompt('Тест регистрации. Введите имя:');
+            const password = prompt('Введите пароль:');
             
-            if (type === 'ai') {
-                message = `
-                    <strong>🤖 MOC.AI демо:</strong><br>
-                    В полной версии:<br>
-                    • Распознавание лиц на фото<br>
-                    • Авто-создание альбомов<br>
-                    • Анализ эмоций и мест
-                `;
-            } else if (type === 'encrypt') {
-                message = `
-                    <strong>🔐 Шифрование:</strong><br>
-                    Мастер-ключ: <code style="background: #333; padding: 2px 5px; border-radius: 3px;">a1b2c3...z9</code><br>
-                    Файл → Шифрование XChaCha20 → Сервер<br>
-                    Только у вас есть ключ!
-                `;
-            } else if (type === 'chat') {
-                message = `
-                    <strong>💬 Безопасный чат:</strong><br>
-                    Сквозное шифрование (E2EE)<br>
-                    Даже MOC не читает ваши сообщения<br>
-                    Только вы и получатель
-                `;
+            if (username && password) {
+                try {
+                    const response = await fetch('http://localhost:5000/auth/register', {
+                        method: 'POST',
+                        headers: {'Content-Type': 'application/json'},
+                        body: JSON.stringify({ username, password })
+                    });
+                    
+                    const data = await response.json();
+                    alert(data.success ? '✅ Успех! Ключ: ' + data.master_key : '❌ Ошибка: ' + data.error);
+                } catch (e) {
+                    alert('❌ Ошибка сети: ' + e.message);
+                }
             }
-            
-            alertBox.innerHTML = message + '<br><button onclick="closeAlert()" style="margin-top: 10px; padding: 5px 10px; background: #7c3aed; color: white; border: none; border-radius: 5px; cursor: pointer;">OK</button>';
-            alertBox.style.display = 'block';
-            
-            // Авто-скрытие через 10 секунд
-            setTimeout(closeAlert, 10000);
-        }
-        
-        function closeAlert() {
-            document.getElementById('demoAlert').style.display = 'none';
-        }
-        
-        // Автоматическое сообщение при загрузке
-        document.addEventListener('DOMContentLoaded', function() {
-            setTimeout(() => {
-                showMessage('ai');
-            }, 2000);
         });
         
-        // Консольное приветствие
-        console.log('%c🔐 MOC — My Open Cloud 💜', 'color: #7c3aed; font-size: 16px; font-weight: bold;');
-        console.log('%cБезопасное облако с AI-ассистентом', 'color: #94a3b8;');
-        console.log('Демо-сайт: https://oleg45-beep.github.io/moc-cloud/');
+        // Плавная навигация
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
     </script>
 </body>
 </html>
